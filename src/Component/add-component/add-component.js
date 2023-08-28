@@ -15,7 +15,7 @@ const AddComponent = () => {
 
   const btnHandleAdd = async () => {
 
-    let result = await fetch("http://localhost:3500/add-task", {
+    let result = await fetch("https://task-management-application-nl6n.onrender.com/add-task", {
       method: "POST",
       body: JSON.stringify({ title, description, completed, user }),
       headers: {

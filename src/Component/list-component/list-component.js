@@ -14,7 +14,7 @@ const ListComponent = () => {
 
     const LoadTaskList = async () => {
 
-        let data = await fetch("http://localhost:3500/task-list", {
+        let data = await fetch("https://task-management-application-nl6n.onrender.com/task-list", {
             headers: {
                 authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
@@ -25,7 +25,7 @@ const ListComponent = () => {
 
     const btnHandleDelete = async (id) => {
 
-        let data = await fetch(`http://localhost:3500/delete-task/${id}`, {
+        let data = await fetch(`https://task-management-application-nl6n.onrender.com/delete-task/${id}`, {
 
             method: "DELETE",
             headers: {

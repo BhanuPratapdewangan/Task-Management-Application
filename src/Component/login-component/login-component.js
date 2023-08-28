@@ -17,7 +17,7 @@ const LoginComponent = () => {
             return false
         }
 
-        let data = await fetch("http://localhost:3500/login", {
+        let data = await fetch("https://task-management-application-nl6n.onrender.com/login", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: {
