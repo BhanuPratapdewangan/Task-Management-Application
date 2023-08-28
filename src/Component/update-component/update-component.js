@@ -17,7 +17,7 @@ const UpdateComponent = () => {
   }, []);
 
   const getTaskDetails = async () => {
-    let data = await fetch(`http://localhost:4500/get-task/${param.id}`, {
+    let data = await fetch(`http://localhost:3500/get-task/${param.id}`, {
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
       }
@@ -35,7 +35,7 @@ const UpdateComponent = () => {
   // }
 
   const btnHandleUpdate = async () => {
-    let data = await fetch(`http://localhost:4500/update-task/${param.id}`, {
+    let data = await fetch(`http://localhost:3500/update-task/${param.id}`, {
       method: "PUT",
       body: JSON.stringify({ title, description, completed }),
       headers: {

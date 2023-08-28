@@ -17,7 +17,7 @@ const LoginComponent = () => {
             return false
         }
 
-        let data = await fetch("http://localhost:4500/login", {
+        let data = await fetch("http://localhost:3500/login", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: {

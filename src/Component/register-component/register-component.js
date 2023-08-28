@@ -16,7 +16,7 @@ const RegisterComponent = () => {
             return false;
         }
 
-        let result = await fetch("http://localhost:4500/signup", {
+        let result = await fetch("http://localhost:3500/signup", {
 
             method: "POST",
             body: JSON.stringify({ name, email, password }),
