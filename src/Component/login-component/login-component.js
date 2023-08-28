@@ -10,14 +10,14 @@ const LoginComponent = () => {
     const Navigate = useNavigate();
 
     const btnHandleLogin = async () => {
-        console.log(email, password);
 
         if (!email || !password) {
             setError(true)
             return false
         }
 
-        let data = await fetch("https://task-management-application-nl6n.onrender.com/login", {
+        try{
+            let data = await fetch("https://task-management-application-nl6n.onrender.com/login", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: {
@@ -26,8 +26,11 @@ const LoginComponent = () => {
             }
         })
 
-        data = await data.json();
-        console.log(data);
+        data = await JSON.parse(data);
+        } catch(err) {
+            console.error(err);
+        }
+        
 
         localStorage.setItem('token', JSON.stringify(data.auth));
         localStorage.setItem('user', JSON.stringify(data.data));
