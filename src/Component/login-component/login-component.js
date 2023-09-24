@@ -16,8 +16,7 @@ const LoginComponent = () => {
             return false
         }
 
-        try{
-            let data = await fetch("https://task-management-application-nl6n.onrender.com/login", {
+        let data = await fetch("https://task-management-application-nl6n.onrender.com/login", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: {
@@ -26,12 +25,8 @@ const LoginComponent = () => {
             }
         })
 
-        data = await JSON.parse(data);
-        } catch(err) {
-            console.error(err);
-        }
+        data = await data.json();
         
-
         localStorage.setItem('token', JSON.stringify(data.auth));
         localStorage.setItem('user', JSON.stringify(data.data));
 
